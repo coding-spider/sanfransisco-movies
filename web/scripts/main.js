@@ -36,7 +36,7 @@ $(document).ready(function() {
     return mapModule;
   }());
 
-// UNderscore settings
+  // UNderscore settings
   var setUnderscoreDefaultSettings = function() {
     _.templateSettings = {
       interpolate: /\{\{(.+?)\}\}/g, // print value: {{ value_name }}
@@ -50,7 +50,7 @@ $(document).ready(function() {
   var markerTemplate = _.template($("#markerDom").html());
 
   /** Autocomplete **/
-  $("#search_input").autocomplete({
+  $("#searchInp").autocomplete({
     delay: 300,
     minLength: 3,
     source: function(request, response) {
@@ -71,16 +71,16 @@ $(document).ready(function() {
     }
   });
 
-  $("#search_button").click(function() {
-    var text = $("#search_input").val();
-    if(!text.trim()){
+  $("#searchBtn").click(function() {
+    var text = $("#searchInp").val();
+    if (!text.trim()) {
       return;
     }
     Map.clearMarkers();
     getLocations('movie', null, text.trim());
   });
 
-  var getLocations = function(type, movie, q) {
+  function getLocations(type, movie, q) {
     if (movie) {
       //No exact match
       $.getJSON('api/movies/' + movie.id, {
@@ -88,11 +88,10 @@ $(document).ready(function() {
           include: ['locations']
         }
       }, function(data) {
-        console.log("Dataaa", data);
         if (!data) {
-          $(".help_container").css('visibility', 'visible');
+          $(".no-results").css('visibility', 'visible');
         } else {
-          $(".help_container").css('visibility', 'hidden');
+          $(".no-results").css('visibility', 'hidden');
           bindMarkerLocation(data);
         }
       });
@@ -102,11 +101,10 @@ $(document).ready(function() {
         q: q,
         type: type
       }, function(data) {
-        console.log("Dataaa", data);
         if (!data.length) {
-          $(".help_container").css('visibility', 'visible');
+          $(".no-results").css('visibility', 'visible');
         } else {
-          $(".help_container").css('visibility', 'hidden');
+          $(".no-results").css('visibility', 'hidden');
           data.forEach(function(movie) {
             if (movie.locations) {
               bindMarkerLocation(movie);
