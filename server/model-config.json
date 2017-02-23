@@ -50,5 +50,9 @@
   "movielocation": {
     "dataSource": "mdb",
     "public": true
+  },
+  "search": {
+    "dataSource": "mdb",
+    "public": true
   }
 }
