@@ -12,22 +12,14 @@
 
 <body>
 
-  <p>I am up and running</p>
-
   <div class="search_controls">
     <div class="ui-widget search_controls">
-      <div class="container">
-        <ul class="nav nav-pills">
-          <li class="nav active" value="movie"><a href="#" data-toggle="tab">Movie</a></li>
-          <li class="nav" value="director"><a href="#" data-toggle="tab">Director</a></li>
-        </ul>
-      </div>
       <span>
 			<input id="search_input" type="text" placeholder="Search movies">
 			<button id="search_button" type="button" class="btn btn-primary btn-circle"><i class="glyphicon glyphicon-search"></i></button>
 			<div class="help_container">
-				<b class="help_text">No results found :(</b>
-				<p class="help_text">Try movies like: '180' or 'Ant-Man', or try directors like: 'Alan Taylor' or 'Alon Aranya'</p>
+				<b class="help_text">No results found</b>
+				<p class="help_text">Try 'Big Sur' or 'Big Eyes'</p>
 			</div>
 		</span>
     </div>
@@ -38,8 +30,10 @@
   <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="scripts/main.js"></script>
+
+  <!-- Marker template -->
   <script type="text/template" id="markerDom">
     <div id="content">
       <h3>{{title}}</h3>
@@ -58,6 +52,7 @@
       </div>
     </div>
   </script>
+
 </body>
 
 </html>
