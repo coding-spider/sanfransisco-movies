@@ -1,0 +1,24 @@
+{
+  "name": "movielocation",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "movie": {
+      "type": "belongsTo",
+      "model": "movie",
+      "foreignKey": "movieId"
+    },
+    "location": {
+      "type": "belongsTo",
+      "model": "location",
+      "foreignKey": "locationId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

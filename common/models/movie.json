@@ -1,0 +1,51 @@
+{
+  "name": "movie",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "releaseYear": {
+      "type": "string"
+    },
+    "funfacts": {
+      "type": "string"
+    },
+    "productionCompany": {
+      "type": "string"
+    },
+    "distributor": {
+      "type": "string"
+    },
+    "actors": {
+      "type": [
+        "string"
+      ]
+    },
+    "writer": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "director": {
+      "type": "belongsTo",
+      "model": "director",
+      "foreignKey": ""
+    },
+    "locations": {
+      "type": "hasMany",
+      "model": "location",
+      "foreignKey": "movieId",
+      "through": "movielocation",
+      "keyThrough": "locationId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
