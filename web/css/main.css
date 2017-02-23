@@ -1,0 +1,48 @@
+html, body {
+ height: 100%; margin: 0; padding: 0;
+}
+
+#map {
+	height: 100%;
+}
+
+.search {
+	position: absolute;
+	z-index: 20;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 1.42;
+  border-radius: 15px;
+  text-align: center;
+  padding: 5px 0;
+}
+
+#searchInp {
+	width: 400px;
+}
+
+.no-results {
+  padding: 5px 10px;
+	border-radius: 1px;
+	margin-top: 30px;
+	position: absolute;
+	display: inline-block;
+	visibility: hidden;
+	margin-left: 40px;
+	transform: translateY(-30px);
+	background-color: white;
+}
+
+.no-results-text {
+  text-align: justify;
+	font-size: 12px;
+	width: 150px;
+}

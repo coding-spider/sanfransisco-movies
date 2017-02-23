@@ -1,0 +1,32 @@
+{
+  "name": "location",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "lat": {
+      "type": "string"
+    },
+    "lon": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "movies": {
+      "type": "hasMany",
+      "model": "movie",
+      "foreignKey": "locationId",
+      "through": "movielocation",
+      "keyThrough": "movieId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
