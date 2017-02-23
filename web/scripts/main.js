@@ -73,8 +73,11 @@ $(document).ready(function() {
 
   $("#search_button").click(function() {
     var text = $("#search_input").val();
+    if(!text.trim()){
+      return;
+    }
     Map.clearMarkers();
-    getLocations('movie', null, text);
+    getLocations('movie', null, text.trim());
   });
 
   var getLocations = function(type, movie, q) {
